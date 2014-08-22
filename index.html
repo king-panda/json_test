@@ -9,20 +9,31 @@
         $.getJSON("item.json",
           function(data) {
             for(var i=0; i<data.length; i++) {
-              $("#dataTable").append("<tr></tr>")
-                .find("tr:last")
-                .append("<td>" + data[i].code + "</td>")
-                .append("<td>" + data[i].name + "</td>")
-                .append("<td>" + data[i].price + "</td>");
+              $("#dataTable").append("<li></li>")
+                .find("li:last")
+                .append("<span>" + data[i].code + "</span>")
+                .append("<span>" + data[i].name + "</span>")
+                .append("<span>" + data[i].price + "</span>");
             }
           }
         );
       });
     </script>
+    <style>
+	* { 
+	margin: 0;
+  	padding: 0;
+  	border: 0;
+	}
+	ul li{
+	list-style:none;	
+	}
+	</style>
   </head>
   <body>
-    <table id="dataTable">
-      <tr><th>code</th><th>name</th><th>price</th></tr>
-    </table>
+    <ul id="dataTable">
+    
+    
+    </ul>
   </body>
 </html>
